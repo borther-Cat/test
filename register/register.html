@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册页面</title>
+    <link rel="icon" href="https://www.j1.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/captcha.min.js"></script>
+    <script src="./js/register.js"></script>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="log">
+            <a class="logoj1" href="#">
+                <img alt="健一网网上药店" src="https://passport.j1.com/images/j1lg.png" alt="">
+            </a>
+            <h2>会员注册</h2>
+            <p> 注册成功即可获得<span class="fc4">100</span>积分+<span class="fc4">会员特权</span>！</p>
+        </div>
+        <div class="content">
+            <form>
+                <div class="content_l">
+                    <dl class="item">
+                        <dt>
+                            <span class="xing">*</span>
+                            手机号
+                        </dt>
+                        <dd>
+                            <input class="bk_default" type="text" placeholder="请输入你的手机号">
+                            <div class="ts-error"></div>
+                            <div></div>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                            <dt>
+                                <span class="xing">*</span>
+                                设置密码
+                            </dt>
+                            <dd>
+                                <input class="bk_default" type="password" placeholder="6-20个大小写英文字母，符号或数字" >
+                                <label for="" class="beizhu">安全程度：<em class="cd-01" id="aqStyle"></em></label>
+                                <div class="ts-error"></div>
+                                <div></div>
+                            </dd>
+                    </dl>
+                    <dl class="item">
+                            <dt>
+                                <span class="xing">*</span>
+                                确认密码
+                            </dt>
+                            <dd>
+                                <input class="bk_default"  type="password" placeholder="再次输入密码">
+                                <div class="ts-error"></div>
+                                <div></div>
+                            </dd>
+                    </dl>
+                    <dl class="item">
+                            <dt>
+                                <span class="xing">*</span>
+                               验证码
+                            </dt>
+                            <dd>
+                                <input class="bk_default bk80 " type="text" >
+                                <canvas  width="80" height="34" id="captcha"></canvas>
+                                <button id="imgBtn" class="btn1">确认验证码</button>
+                                <div class="ts-error" id="checkCode"></div>
+                            </dd>
+                    </dl>
+                    <div class="ljzc yhxy">
+                            <input type="checkbox" value="1" class="checkbox" id="readme" name="readme">
+                            <label for="protocol">
+                                请阅读并同意健一网
+                                <a target="_blank" href="#" id="protocol">
+                                    《用户协议》
+                                </a>
+                            </label>
+                            <div class="ts-error _register_error_inf">
+                                <em></em>
+                            </div>
+                    </div>
+                    <div class="ljzc">
+                            <input type="submit" style="cursor:pointer;" class="btn-ljzc" value="立即注册">
+                        </div>
+                </div>
+
+            </form>
+            <div class="content_r">
+                    <h4 class="fs14">已有健一账号？</h4>
+                    <a class="btn-ksdl" href="https://passport.j1.com/login.html" target="_blank">快速登录</a>
+                    <h4>使用合作账号登录健一网</h4>
+                    <ul class="hzzh">
+                        <li class="hz-01"><a href="javascript:void(0);" onclick="openAlipayLoginWindow();">支付宝</a></li>
+                        <li class="hz-02"><a href="javascript:void(0);" onclick="openQQLoginWindow();">QQ</a></li>
+                        <li class="hz-03"><a href="javascript:void(0);" onclick="openVincceWindow('Y')">平安健康商圈 健康卡</a></li>
+                    </ul>
+                    <ul class="fs14_next">
+                        <li>
+                            <a href="javascript:void(0);" onclick="openHrtWindow();" style="width: 100px;height: 20px;position: relative;;display:block;">
+                                <img src="https://passport.j1.com/images/hrtLogin2.png" style="width:25px;margin-top: 0px;margin-left: -5px;">
+                                <span style="position: absolute;right: 40px;top:6px;font-size: smaller;">华润通</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" onclick="openTPWindow();" style="width: 125px;height: 20px;margin-top: 5px;position: relative;;display:block;">
+                                <img src="https://passport.j1.com/images/tp.png" style="width:20px;margin-top: 5px;margin-left: -5px;">
+                                <span style="position: absolute;right: 40px;top:6px;font-size: smaller;">健钇健康卡</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" onclick="zhebLogin('index');" style="width: 110px;height: 20px;margin-top: 5px;position: relative;;display:block;">
+                                <img src="https://passport.j1.com/images/Ebao.png" style="width:25px;margin-top: 5px;margin-left: -5px;">
+                                <span style="position: absolute;right: 40px;top:6px;font-size: smaller;">智慧E保</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="sec-footer">
+                <div class="zhengshu">
+                    <a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">互联网药品交易服务资格证书</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">药品经营许可证</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">互联网药品信息服务资格证书</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">食品流通许可证</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">医疗器械经营企业许可证</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">药品经营质量管理规范认证证书（新）</a><br>
+                    <a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">互联网医疗保健信息服务审核同意书</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">信用资质等级评定</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">信用资质等级证书</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">企业法人营业执照</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">税务登记证</a>
+                </div> 
+                
+                <div>Copyright © j1.com All rights reserved 沪ICP备09007253号
+                    上海健一网大药房连锁经营有限公司
+                </div>
+                <script type="text/javascript">
+                        function go2J1help(){
+                            window.location.href = "https://www.j1.com/news-help-40.html";
+                        }
+                    </script>
+            </div>
+    </div>
+    
+</body>
+</html>
