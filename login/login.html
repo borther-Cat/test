@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页面</title>
+    <link rel="icon" href="https://www.j1.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/captcha.min.js"></script>
+    <script src="./js/Cookie.js"></script>
+    <script src="./js/login.js"></script>
+</head>
+<body>
+    <div class="zc-bg">
+        <div class="zc-layout">
+            <!-- logo	 -->
+            <div class="logo-main">
+                    <a href="https://www.j1.com" target="_blank"><img width="200" height="39" src="https://passport.j1.com/images/j1lg.png"></a>
+            </div>
+            <!-- 登录 -->
+            <div class="zc-register clearfix">
+                <div class="reg-l">
+                    <div id="slideBox" class="slideBox">
+                        <div class="bd" adid="13"><a href="https://www.j1.com/activity/yyzq.html" target="_blank"><img src="https://img02.j1.com/images/images1308/20190906/zq.jpg"></a></div>
+                    </div> 
+                </div>
+                <!-- 右边登入 -->
+
+                    <div class="reg-r login-wrap" value="no">
+                        <ul class="login-icon">
+                            <li class="login-icon1">
+                               <i a="" href="javascript:void(0);" ></i>
+    
+                                <p><span>扫码登录更安全</span></p>
+                            </li>
+                            <li class="login-icon2"><i></i></li>
+                        </ul>
+                        <div class="login-tab">
+                            <div class="signin-tab">
+                                <div class="signin-title">
+                                    <ul>
+                                        <li>
+                                            <label for="dl1">
+                                                <input type="radio" id="dl1" checked="checked" name="switch" value="normal">
+                                                普通登录</label>
+                                        </li>
+                                        <li>
+                                            <label for="dl2">
+                                                <input type="radio" id="dl2" value="quick" name="switch">
+                                                快捷登录</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="signin-main clearfix">
+                                    <div>
+                                        <div class="gdx-1 clearfix">
+                                            <div class="fl">账号</div>
+                                            <div class="fr">
+                                                <a href="#" >免费注册</a>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="fl item-sj">
+                                                <div class="o-regName bc">
+                                                    <input type="text"  placeholder="邮箱/用户名/手机号"  class="text bian-01 _login_name_inf removeClass" name="userName2" id="userName2" style="color: #999;">
+                                                    <!--  error 变class -->
+                                                    <label for="" id="errMsgName"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdx-1 clearfix">
+                                            <div class="fl">密码</div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="fl item-sj">
+                                                <div class="o-regName bc">
+                                                    <!--获取焦点 bian-01为输入边框 bian-02为报错边框 -->
+                                                    <input type="password" class="text removeClass bian-01 text-mm _password_inf" name="password2" id="password2" >
+                                                    <!--  error 变class -->
+                                                    <label for="" id="errMsgPwd"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item jzzh">
+                                            <div class="fl">
+        
+                                                <input type="checkbox" name="rememberPwd2" id="rememberPwd2" class="checkbox" value="1"> <label class="mar">自动登录</label>                                  
+                                            </div>
+                                            <div class="fr">
+                                                <label><a href="javascript:void(0);" >忘记密码?</a></label>
+                                            </div>
+                                        </div>
+                                        <!-- 登录 -->
+                                        <div class="item item-xy">
+                                            <div class="fl item-sj">
+                                                <input type="button"  class="zc-ljzc" value="登录" id="ptLogin">
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="backCookie" name="backCookie" value="">
+        
+                                    </div>
+        
+                                    <!-- 手机 -->
+                                    <div style="display:none">
+                                        <div class="gdx-1 clearfix">
+                                            <div class="fl">账号</div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="fl item-sj">
+                                                <div class="o-regName bc">
+                                                    <input type="text" placeholder="输入手机号" class="text bian-01" name="regName" id="input_quickLogin" style="color:#999;">
+                                                    <label style="display: none;" id="label_quick_login_phone" class="focus error">请输入正确的手机号</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdx-1 clearfix">
+                                            <div class="fl">验证码</div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="fl item-sj">
+                                                <div class="o-regName bc">
+                                                    <input type="text" class="text text-mm  w60" id="input_img_code">
+                                                    <input type="text" style="display:none;" class="text text-mm  w60" id="input_mobile_code">
+                                                    <label style="display: none;" id="label_img_code" class="focus error">验证码错误，请重新输入</label>
+                                                    <canvas  width="80" height="34" id="captcha"></canvas>
+                                                    <a href="javascript:void(0);" id="a_checkImgCode" class="btn-qryzm _code_mobile">确认验证码</a>
+                                                    <input type="button" value="重新发送验证码" id="a_resendMobileCode" class="btn-qryzm _code_mobile" style="display:none;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item jzzh">
+                                            <div class="fl">
+                                                <!--
+                                                <input type="checkbox" name="" class="checkbox">
+                                                <label class="mar">自动登录</label>
+                                                -->
+                                                <input type="checkbox" value="1" class="checkbox" checked="checked" id="readme2" name="readme2">
+                                                <label for="protocol2">
+                                                    我已阅读并同意
+                                                    <a target="_blank" href="https://www.j1.com/yonghuxieyi-pc.html" id="protocol2">
+                                                        《用户协议》
+                                                    </a>
+                                                </label>
+                                                <div id="login_error_info">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="fr">
+                                                <label><a href="#" >忘记密码?</a></label>
+                                            </div>
+                                        </div>
+                                        <!-- 登录 -->
+                                        <div class="item item-xy">
+                                            <div class="fl item-sj">
+                                                <input type="button"  class="zc-ljzc" value="登录" id="loginB">
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>           
+                        <!-- 合作网站 -->
+                        <div class="hzwz">
+                            <p>使用合作网站账号登录健一网：</p>
+                            <a href="javascript:void(0);" class="hzico ico-01" onclick="openQQLoginWindow();">QQ</a> <a href="javascript:void(0);" class="hzico ico-02" onclick="openAlipayLoginWindow();">支付宝</a> <a href="javascript:void(0);" class="hzico ico-03" onclick="openVincceWindow()"></a>
+                            <br>
+
+                            <a href="javascript:void(0);" class="hrt" onclick="openHrtWindow()">
+                                <img src="https://passport.j1.com/images/hrtLogin2.png" class="hrt hrt-01">
+                                <span class="hrt hrt-02">华润通</span></a>
+                            <a href="javascript:void(0);" onclick="openTPWindow();" class="tp">
+                                <img src="https://passport.j1.com/images/tp.png" class="tp tp-01">
+                                <span class="tp tp-02">健钇健康卡</span></a>
+                            <a href="javascript:void(0);" onclick="zhebLogin('https://www.j1    .com/p-11100.html');" class="zheb">
+                                <img src="https://passport.j1.com/images/Ebao.png" class="zheb zheb-01">
+                            <span class="zheb zheb-02">智慧E保</span></a>
+                        </div>
+                    </div>
+    
+                    <div class="login-tab" style="display: none;">
+                        <h2>手机扫码,安全登录</h2>
+                        <div class="code-box">
+                           <!-- <img src="http://localhost:8084/passport/images/qcode_login/code.png"/> -->
+                            <img id="qrcode" alt="" src="">
+                            <div class="mask-wrap">
+                                <div class="mask-box"></div>
+                                <div class="mask-box1">
+                                    <h2>登录失败</h2>
+                                    <h2 class="mskh2">二维码失效</h2>
+                                    <a class="codegx" href="javascript:void(0);" onclick="getQrcodes('N');">点击刷新</a>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="openj1-box">
+                            <li>打开<a href="">健一网app</a></li>
+                            <li>扫一扫登录</li>
+                        </ul>
+                    </div>
+    
+                </div>
+    
+            </div>
+     <!--footer -->
+    <div class="sec-footer">
+        <div class="zhengshu">
+            <a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">互联网药品交易服务资格证书</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">药品经营许可证</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">互联网药品信息服务资格证书</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">食品流通许可证</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">医疗器械经营企业许可证</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">药品经营质量管理规范认证证书（新）</a><br>
+            <a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">互联网医疗保健信息服务审核同意书</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">信用资质等级评定</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">信用资质等级证书</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">企业法人营业执照</a>&nbsp;&nbsp;<a rel="nofollow" target="_blank" href="javascript:void(0);" onclick="go2J1help();">税务登记证</a>
+        </div> 
+        
+        <div>Copyright © j1.com All rights reserved 沪ICP备09007253号
+            上海健一网大药房连锁经营有限公司
+        </div>
+        <script type="text/javascript">
+                function go2J1help(){
+                    window.location.href = "https://www.j1.com/news-help-40.html";
+                }
+            </script>
+    </div>
+    
+        </div>
+    </div>
+</body>
+</html>
