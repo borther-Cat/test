@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 异步编程的解决方案：(1) 回调函数  (2) Promise*/
+        /* 需求：现在拥有三个异步任务 task1 task2 task3  需要等task2 -> task3 -> task1 -> task5 -> task4*/
+        /* 回调地狱 */
+        // setTimeout(function() {
+        //     console.log("task2")
+
+        //     setTimeout(function() {
+        //         console.log("task3")
+
+        //         setTimeout(function() {
+        //             console.log("task1")
+
+        //             setTimeout(function() {
+        //                 console.log("task5")
+
+        //                 setTimeout(function() {
+        //                     console.log("task4")
+        //                 })
+        //             })
+        //         })
+        //     })
+        // })
+
+
+
+
+        /* 同步执行：甲(买包烟 10) 乙(买个打火机 5) 丙(买个外卖 10)   10+5+10 = 25 */
+        /* 异步执行：
+          甲(买包烟 10)
+          乙(买个打火机 5)
+          丙(买个外卖 10)
+         */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 需求：B和C和D三个异步任务都执行完，才执行A这个异步任务。 -->
+    <script>
+        /* 参数：数组，数组中的每个元素都是异步任务的实例对象(都是Promise对象) */
+        Promise.all([
+            new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    console.log("--B");
+                    resolve();
+                }, 200)
+            }),
+            new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    console.log("--C");
+                    // resolve();
+                    reject();
+                }, 15)
+            }),
+            new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    console.log("--D");
+                    resolve();
+                }, 400)
+            })
+        ]).then(function() {
+            console.log("B-C-D三个任务都执行完");
+
+            setTimeout(function() {
+                console.log("--A");
+            })
+        }).catch(function() {
+            console.log("出现错误");
+        })
+    </script>
+</body>
+
+</html>

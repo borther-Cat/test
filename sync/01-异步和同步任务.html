@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 任务的执行方式：异步执行 同步执行 */
+        /* 默认大多数情况，任务都是同步执行(严格按照顺序来执行，必须要等当前任务执行完才执行后面的任务) */
+        /* 特殊的方法情况，任务都是异步执行(不必等当前任务执行完就可以执行后面的任务) ，典型的就是Ajax 定时器 异步(Node)*/
+        /* 异步执行任务的特点：要等其他的同步任务执行完，才执行异步任务的打印操作*/
+
+        console.log("___start___");
+        console.log("task1");
+
+        setTimeout(() => console.log("setTimeout"), 1);
+        for (var i = 0; i < 1000; i++) {
+            console.log("i=", i);
+        }
+
+        console.log("task2");
+        console.log("task3");
+        console.log("___end___");
+    </script>
+</body>
+
+</html>
