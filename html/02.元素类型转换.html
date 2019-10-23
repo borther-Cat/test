@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">	
+			*{margin: 0;	padding: 0;	}
+			div{
+				width: 200px;	
+				height: 200px;	
+				background: 	yellow;
+				display:inline-block;
+			}
+			.box2{
+				display:none;
+			}
+			body:hover .box2{
+				display:block;/*有显示功能*/
+			}
+        </style>
+    </head>
+    <body>
+    	  <!-- 属性：display -->
+    	  <!-- 属性值：block 将元素转为块级元素（将display:none的元素显示）
+    	  			   inline 将元素转为行内元素
+    	  			   inline-block 将元素转为行内块元素
+    	  			   none 隐藏元素
+    	  -->
+    	  <div>1</div><div class="box2">2</div><div>3</div>
+    </body>
+</html>

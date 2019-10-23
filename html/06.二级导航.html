@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+
+        /*新增选择器: >子选择器*/
+        /*说明：只能选择第一代子元素*/
+
+			*{margin: 0;padding: 0;}
+			ul,li{list-style:none;}
+			a{text-decoration:none;}
+
+			.nav_1{width: 640px;margin:200px auto;}
+			.nav_1>li{
+				float:left;
+				margin:5px;
+			}
+			.nav_2>li>a{
+				background: seagreen;
+			}
+			ul a{
+				display:block;
+				width: 150px;
+				height: 50px;
+				background: deeppink;
+				text-align: center;
+				line-height:50px;
+				font-size:18px;
+				color:lightgreen;
+			}
+			.nav_2{
+				display:none;
+			}
+			.nav_1 li:hover .nav_2{
+				display:block;
+			}
+		    .nav_3{
+				display:none;
+				position:absolute;
+				top:0;
+				left:160px;
+			}
+			.nav_2>li:hover .nav_3{
+				display:block;
+			}
+			.nav_2>li{
+				position:relative;
+			}
+        </style>
+    </head>
+    <body>
+    	<ul class="nav_1">
+    		<li>
+    			<a href="#">电视剧</a>
+    			<ul class="nav_2">
+    				<li>
+    					<a href="#">回家的诱惑</a>
+    					<ul class="nav_3">
+    						<li><a href="#">洪世贤</a></li>
+    						<li><a href="#">艾莉</a></li>
+    						<li><a href="#">品如</a></li>
+    					</ul>
+    				</li>
+    				<li>
+    					<a href="#">妻子的秘密</a>
+    					<ul class="nav_3">
+    						<li><a href="#">洪世贤</a></li>
+    						<li><a href="#">艾莉</a></li>
+    						<li><a href="#">品如</a></li>
+    					</ul>
+    				</li>
+    				<li>
+    					<a href="#">东宫</a>
+    					<ul class="nav_3">
+    						<li><a href="#">洪世贤</a></li>
+    						<li><a href="#">艾莉</a></li>
+    						<li><a href="#">品如</a></li>
+    					</ul>
+    				</li>
+    				<li>
+    					<a href="#">甄嬛传</a>
+    					<ul class="nav_3">
+    						<li><a href="#">洪世贤</a></li>
+    						<li><a href="#">艾莉</a></li>
+    						<li><a href="#">品如</a></li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</li>
+    		<li>
+    			<a href="#">电影</a>
+    			<ul class="nav_2">
+    				<li><a href="#">流浪地球</a></li>
+    				<li><a href="#">飞驰人生</a></li>
+    				<li><a href="#">悲惨世界</a></li>
+    				<li><a href="#">绿皮书</a></li>
+    			</ul>
+    		</li>
+    		<li>
+    			<a href="#">动漫</a>
+    			<ul class="nav_2">
+    				<li><a href="#">犬夜叉</a></li>
+    				<li><a href="#">幽游白书</a></li>
+    				<li><a href="#">数码宝贝</a></li>
+    				<li><a href="#">火影忍者</a></li>
+    			</ul>
+    		</li>
+    		<li>
+    			<a href="#">儿童</a>
+    			<ul class="nav_2">
+    				<li>
+    					<a href="#">天线宝宝</a>
+    					<ul class="nav_3">
+    						<li><a href="#">拉拉</a></li>
+    						<li><a href="#">迪ci</a></li>
+    						<li><a href="#">波波</a></li>
+    						<li><a href="#">蛋蛋</a></li>
+    					</ul>
+    				</li>
+    				<li>
+    					<a href="#">花园宝宝</a>
+    				</li>
+    				<li>
+    					<a href="#">海绵宝宝</a>
+    				</li>
+    				<li>
+    					<a href="#">蜡笔小新</a>
+    				</li>
+    			</ul>
+    		</li>
+    	</ul>
+    </body>
+</html>

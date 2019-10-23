@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+  		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			img{
+				width: 300px;
+				height: 300px;
+				position:absolute;
+				top:0;
+				left:0;
+			}
+			img:nth-child(2){
+				z-index:-1;
+			}
+			img:nth-child(1){
+				z-index:-2;
+			}
+  		</style>
+    </head>
+    <body>
+  <!--  层叠属性：z-index
+    	取值：负数 正数 默认为0
+    	结果：值越大在上层显示 
+    -->
+    	<img src="../images/ln.jpg" alt="" /><img src="../images/lz.jpg" alt="" />
+    </body>
+</html>

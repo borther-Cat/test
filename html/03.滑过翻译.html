@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">	
+			*{margin: 0;padding: 0;	}
+			ul,li{list-style:none;}
+			a{text-decoration:none;}
+
+			ul{
+				width: 500px;	
+				border-bottom:8px solid #df4e19;
+				margin:100px auto;
+				height: 20px;	
+				padding-left:6px;
+			}
+			ul li{
+				float:left;
+			}
+			ul a{
+				display:block;
+				width: 80px;	
+				height: 20px;	
+				font-size:12px;
+				color:#696969;
+				line-height:20px;
+				text-align:center;
+				background: #dfdfdf;
+				margin-right:1px;
+			}
+			/*ul .a1{
+				display:none;
+			}*/
+			ul li a:nth-child(1){
+				display:none;
+			}
+			ul li:hover a:nth-child(1){
+				display:block;
+				background: #df4e19;
+				color:#fff;
+			}
+			ul li:hover a:nth-child(2){
+				display:none;
+			}		
+        </style>
+    </head>
+    <body>
+    		<!-- ul>li*5>a[href="#"]{首页}+a[href="#"]{home}+tab -->
+    		<ul>
+    			<li>
+    				<a class="a1" href="#">首页</a><a href="#">home</a>
+    			</li>
+    			<li>
+    				<a class="a1" href="#">首页</a><a href="#">home</a>
+    			</li>
+    			<li>
+    				<a class="a1" href="#">首页</a><a href="#">home</a>
+    			</li>
+    			<li>
+    				<a class="a1" href="#">首页</a><a href="#">home</a>
+    			</li>
+    			<li>
+    				<a class="a1" href="#">首页</a><a href="#">home</a>
+    			</li>
+    		</ul>
+    </body>
+</html>

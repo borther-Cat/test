@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+			*{margin: 0;padding: 0;}
+			div{
+				width: 622px;
+				height: 622px;
+				border:2px solid seagreen;
+				position:relative;/*相对定位*/
+				margin:100px auto;
+			}
+			p{
+				width: 100px;
+				height: 100px;
+				background: yellowgreen;
+				font-size:50px;
+				text-align:center;
+				line-height:100px;
+				position:absolute;/*绝对定位*/
+			}
+			div p:nth-child(1){
+				top:10px;
+				left:10px;
+			}
+			div p:nth-child(2){
+				top:10px;
+				right:10px;
+			}
+			div p:nth-child(3){
+				bottom:10px;
+				left:10px;
+			}
+			div p:nth-child(4){
+				bottom:10px;
+				right:10px;
+			}
+			
+			/*让子元素在父元素中上下左右居中*/
+			div p:nth-child(5){
+				background: palevioletred;
+				left:50%;
+				top:50%;
+				margin-left:-50px;
+				margin-top:-50px;
+			}
+        </style>
+    </head>
+    <body>
+    	<div>
+    		<p>1</p>
+    		<p>2</p>
+    		<p>3</p>
+    		<p>4</p>
+    		<p>5</p>
+    	</div>
+    </body>
+</html>
